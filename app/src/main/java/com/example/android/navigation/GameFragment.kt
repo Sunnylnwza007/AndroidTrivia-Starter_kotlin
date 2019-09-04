@@ -48,6 +48,7 @@ class GameFragment : Fragment() {
             Question(text = "What's the build system for Android?",
                     answers = listOf("Gradle", "Graddle", "Grodle", "Groyle")),
             Question(text = "Which class do you use to create a vector drawable?",
+
                     answers = listOf("VectorDrawable", "AndroidVectorDrawable", "DrawableVector", "AndroidVector")),
             Question(text = "Which one of these is an Android navigation component?",
                     answers = listOf("NavController", "NavCentral", "NavMaster", "NavSwitcher")),
@@ -100,11 +101,13 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        //view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment())
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    //view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
